@@ -314,7 +314,7 @@ export async function getSearchResults(query, start, rows) {
 }
 
 
-export async function getSearchTermSuggestions(term, selected, prefixes=[]) {
+export async function getSearchTermSuggestions(term, selected, prefixes = []) {
   const baseUrl = `${biolink}search/entity/autocomplete/`;
   const urlExtension = `${baseUrl}${term}`;
   const params = new URLSearchParams();
@@ -323,7 +323,7 @@ export async function getSearchTermSuggestions(term, selected, prefixes=[]) {
   params.append('highlight_class', 'hilite');
   params.append('boost_q', 'category:genotype^-10');
   if (prefixes.length) {
-    prefixes.forEach(elem => {
+    prefixes.forEach((elem) => {
       params.append('prefix', elem);
     });
   }
